@@ -80,10 +80,6 @@ a {
   font-size: 1rem;
 }
 
-.mobile-only {
-  display: none;
-}
-
 .btn {
   border: none;
   outline: none;
@@ -1345,10 +1341,6 @@ footer {
     display: none !important;
   }
 
-  .mobile-only {
-    display: inline-flex;
-  }
-
   .services-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -1409,24 +1401,5 @@ footer {
 
   .footer-inner p:last-child {
     display: none;
-  }
-
-  .home-page {
-    padding-bottom: calc(86px + env(safe-area-inset-bottom));
-  }
-
-  .home-page .mobile-book-cta {
-    position: fixed;
-    left: 12px;
-    right: 12px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
-    z-index: 1500;
-    justify-content: center;
-    border-radius: 999px;
-    padding: 14px 20px;
-    font-weight: 700;
-    color: var(--white);
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 10px 28px rgba(95, 15, 50, 0.32);
   }
 }
