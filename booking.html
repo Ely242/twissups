@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book | Twissups</title>
+  <meta
+    name="description"
+    content="Book a Twissups appointment by selecting an available date, then choosing from open times set by Zedina."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#top" class="brand">
+        <div class="brand-mark">T</div>
+        <div>
+          Twissups
+          <small>Hair by Zedina</small>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="booking.html" aria-current="page">Book</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="index.html#social">Socials</a>
+        <a class="btn btn-primary" href="booking.html">Book Now</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="booking-page-main" id="top">
+    <section class="section">
+      <div class="container booking-page-layout">
+        <div class="booking-card">
+          <div class="booking-page-header">
+            <span class="eyebrow">Booking</span>
+            <h1 class="section-title">Book Your Appointment</h1>
+            <p class="mobile-hide">
+              Select an available date, pick a time, then complete your booking details.
+            </p>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <div class="booking-top-grid">
+              <section class="booking-panel">
+                <div class="field full">
+                  <h3 class="booking-step-title">1. Select a Date</h3>
+                  <div class="booking-calendar" id="bookingCalendar" aria-label="Booking date calendar">
+                    <div class="calendar-nav">
+                      <button type="button" class="calendar-btn" id="calendarPrev" aria-label="Previous month">&#8249;</button>
+                      <strong id="calendarMonthLabel">Month Year</strong>
+                      <button type="button" class="calendar-btn" id="calendarNext" aria-label="Next month">&#8250;</button>
+                    </div>
+
+                    <div class="calendar-weekdays" aria-hidden="true">
+                      <span>Sun</span>
+                      <span>Mon</span>
+                      <span>Tue</span>
+                      <span>Wed</span>
+                      <span>Thu</span>
+                      <span>Fri</span>
+                      <span>Sat</span>
+                    </div>
+
+                    <div class="calendar-days" id="calendarDays"></div>
+                  </div>
+
+                  <input type="hidden" id="date" name="date" />
+                </div>
+              </section>
+
+              <section class="booking-panel">
+                <div class="field full">
+                  <h3 class="booking-step-title">2. Choose an Available Time</h3>
+                  <div class="time-slot-grid" id="timeSlotGrid"></div>
+                  <input type="hidden" id="time" name="time" />
+                </div>
+
+                <div class="field full">
+                  <p class="availability-status" id="availabilityStatus" data-tone="neutral">
+                    Select a date to load available times.
+                  </p>
+                </div>
+              </section>
+            </div>
+
+            <section class="booking-details booking-panel" id="bookingDetails" hidden>
+              <div class="field full">
+                <h3 class="booking-step-title">3. Add Your Details</h3>
+              </div>
+
+              <div class="field">
+                <label for="selectedDateDisplay">Selected date</label>
+                <input
+                  type="text"
+                  id="selectedDateDisplay"
+                  placeholder="Pick a date from the calendar"
+                  readonly
+                />
+              </div>
+
+              <div class="field">
+                <label for="selectedTimeDisplay">Selected time</label>
+                <input
+                  type="text"
+                  id="selectedTimeDisplay"
+                  placeholder="Pick a time"
+                  readonly
+                />
+              </div>
+
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+              </div>
+
+              <div class="field full">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field full">
+                <label for="notes">Hairstyle details and notes</label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  placeholder="Describe the hairstyle you want, length, braid size, preferred color, and any prep questions."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="booking-note">
+                This is a front-end demo. Submitted bookings are stored in your browser only.
+              </div>
+
+              <div class="field full">
+                <button type="submit" class="btn btn-primary btn-full">Submit Booking Request</button>
+              </div>
+            </section>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            Your booking request has been recorded in this demo.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="booking.js"></script>
+</body>
+</html>

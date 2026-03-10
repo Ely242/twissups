@@ -16,7 +16,7 @@
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#top" class="brand">
@@ -30,14 +30,14 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#booking">Book</a></li>
+        <li><a href="booking.html">Book</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a class="btn btn-secondary" href="#contact">Contact</a>
-        <button class="btn btn-primary open-booking">Book Now</button>
+        <a class="btn btn-secondary" href="#social">Socials</a>
+        <a class="btn btn-primary" href="booking.html">Book Now</a>
         <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
       </div>
     </div>
@@ -56,7 +56,7 @@
           </p>
 
           <div class="hero-actions">
-            <button class="btn btn-primary open-booking">Book Your Appointment</button>
+            <a class="btn btn-primary" href="booking.html">Book Your Appointment</a>
             <a class="btn btn-secondary" href="#services">View Services</a>
           </div>
 
@@ -65,11 +65,11 @@
               <strong>Based in Guelph</strong>
               <span>Convenient local booking for clients in and around the city.</span>
             </div>
-            <div class="hero-point">
+            <div class="hero-point mobile-hide">
               <strong>Protective Styles</strong>
               <span>Neat installs designed for beauty, confidence, and hair care.</span>
             </div>
-            <div class="hero-point">
+            <div class="hero-point mobile-hide">
               <strong>Personal Service</strong>
               <span>Every appointment is tailored to your desired look and comfort.</span>
             </div>
@@ -122,7 +122,7 @@
             genuinely taken care of. Zedina focuses on neat execution, thoughtful styling,
             and an experience that feels calm and personalized.
           </p>
-          <p>
+          <p class="mobile-hide">
             Whether you want a simple protective style for everyday wear or a fresh braid
             look for an event, the goal is the same: beautiful results that leave you feeling
             put together and confident.
@@ -137,11 +137,11 @@
               <h4>Detail-driven</h4>
               <p>Clean parts, polished finishes, and styles that photograph beautifully.</p>
             </div>
-            <div class="highlight">
+            <div class="highlight mobile-hide">
               <h4>Hair health aware</h4>
               <p>Protective styling choices that respect your scalp and natural hair.</p>
             </div>
-            <div class="highlight">
+            <div class="highlight mobile-hide">
               <h4>Style variety</h4>
               <p>Twists, stitch braids, knotless looks, cornrows, and more.</p>
             </div>
@@ -154,7 +154,7 @@
       <div class="container">
         <span class="eyebrow">Services</span>
         <h2 class="section-title">Popular braid appointments</h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle mobile-hide">
           You can edit the names, durations, and prices to match Zedina’s exact service list.
         </p>
 
@@ -179,7 +179,7 @@
             </div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card mobile-hide">
             <div class="service-icon">❋</div>
             <h3>Twists</h3>
             <p>Soft, flattering twist styles with a clean finish and comfortable install.</p>
@@ -189,7 +189,7 @@
             </div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card mobile-hide">
             <div class="service-icon">◌</div>
             <h3>Stitch Braids</h3>
             <p>Sharp feed-in looks with clean sections and a polished, modern aesthetic.</p>
@@ -202,165 +202,11 @@
       </div>
     </section>
 
-    <section class="section" id="booking">
-      <div class="container booking-wrap">
-        <div class="booking-info">
-          <span class="eyebrow">Booking</span>
-          <h2 class="section-title">Reserve your spot with Zedina</h2>
-          <p>
-            Clients choose from a calendar, then only see times Zedina has marked as open.
-            Availability can be adjusted anytime based on her student schedule.
-          </p>
-
-          <ul>
-            <li><strong>Location:</strong> Guelph, Ontario</li>
-            <li><strong>Booking rule:</strong> Only pre-opened dates and time blocks can be booked</li>
-            <li><strong>Student-friendly:</strong> Set lighter availability around classes or exams</li>
-            <li><strong>Calendar flow:</strong> Choose date first, then pick from open times only</li>
-          </ul>
-        </div>
-
-        <div class="booking-card">
-          <form id="bookingForm">
-            <div class="field">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
-            </div>
-
-            <div class="field">
-              <label for="phone">Phone number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
-            </div>
-
-            <div class="field">
-              <label for="email">Email address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
-            </div>
-
-            <div class="field">
-              <label for="service">Select service</label>
-              <select id="service" name="service" required>
-                <option value="">Choose a service</option>
-                <option>Knotless Braids</option>
-                <option>Cornrows</option>
-                <option>Twists</option>
-                <option>Stitch Braids</option>
-                <option>Consultation</option>
-              </select>
-            </div>
-
-            <div class="field full">
-              <label>Pick a date</label>
-              <div class="booking-calendar" id="bookingCalendar" aria-label="Booking date calendar">
-                <div class="calendar-nav">
-                  <button type="button" class="calendar-btn" id="calendarPrev" aria-label="Previous month">&#8249;</button>
-                  <strong id="calendarMonthLabel">Month Year</strong>
-                  <button type="button" class="calendar-btn" id="calendarNext" aria-label="Next month">&#8250;</button>
-                </div>
-
-                <div class="calendar-weekdays" aria-hidden="true">
-                  <span>Sun</span>
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
-                  <span>Sat</span>
-                </div>
-
-                <div class="calendar-days" id="calendarDays"></div>
-              </div>
-
-              <input type="hidden" id="date" name="date" />
-            </div>
-
-            <div class="field">
-              <label for="selectedDateDisplay">Selected date</label>
-              <input
-                type="text"
-                id="selectedDateDisplay"
-                placeholder="Pick a date from the calendar"
-                readonly
-              />
-            </div>
-
-            <div class="field">
-              <label for="time">Available time</label>
-              <select id="time" name="time" required disabled>
-                <option value="">Select a service and date first</option>
-              </select>
-            </div>
-
-            <div class="field full">
-              <p class="availability-status" id="availabilityStatus" data-tone="neutral">
-                Select a service and date to see available time slots.
-              </p>
-            </div>
-
-            <div class="field full">
-              <label for="notes">Notes</label>
-              <textarea
-                id="notes"
-                name="notes"
-                placeholder="Tell us about your desired style, hair length, preferred braid size, or any questions."
-              ></textarea>
-            </div>
-
-            <div class="booking-note">
-              This demo is front-end only. Open the availability manager below to set which dates and times are bookable.
-            </div>
-
-            <div class="field full">
-              <button type="submit" class="btn btn-primary btn-full">Book Available Slot</button>
-            </div>
-          </form>
-
-          <div class="form-success" id="formSuccess">
-            Your appointment has been booked in this demo.
-          </div>
-
-          <div class="availability-manager">
-            <div class="manager-head">
-              <h3>Availability Manager</h3>
-              <button type="button" class="btn btn-secondary" id="managerToggle">Open Manager</button>
-            </div>
-
-            <div class="manager-panel" id="managerPanel" hidden>
-              <p class="manager-note">
-                For Zedina: select a date, then choose the exact time blocks that should be open for booking.
-              </p>
-
-              <div class="field">
-                <label for="availabilityDate">Availability date</label>
-                <input type="date" id="availabilityDate" />
-              </div>
-
-              <div class="slot-picker" id="slotPicker"></div>
-
-              <div class="manager-actions">
-                <button type="button" class="btn btn-primary" id="saveAvailability">Save Date Availability</button>
-                <button type="button" class="btn btn-secondary" id="clearDateAvailability">Clear Date</button>
-              </div>
-
-              <p class="availability-status" id="managerStatus" data-tone="neutral">
-                Select a date to manage available time slots.
-              </p>
-
-              <div class="availability-list">
-                <h4>Upcoming Available Dates</h4>
-                <ul id="availabilitySummary"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="gallery">
       <div class="container">
         <span class="eyebrow">Gallery</span>
         <h2 class="section-title">A visual style showcase</h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle mobile-hide">
           Replace these placeholder images with real Twissups hairstyle photos for the final site.
         </p>
 
@@ -392,7 +238,7 @@
             </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item mobile-hide">
             <div class="gallery-bg g4"></div>
             <div class="overlay"></div>
             <div class="gallery-caption">
@@ -401,7 +247,7 @@
             </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item mobile-hide">
             <div class="gallery-bg g5"></div>
             <div class="overlay"></div>
             <div class="gallery-caption">
@@ -410,7 +256,7 @@
             </div>
           </div>
 
-          <div class="gallery-item large">
+          <div class="gallery-item large mobile-hide">
             <div class="gallery-bg g6"></div>
             <div class="overlay"></div>
             <div class="gallery-caption">
@@ -454,7 +300,7 @@
             </div>
           </div>
 
-          <div class="faq-item">
+          <div class="faq-item mobile-hide">
             <button class="faq-question">
               <span>Can I reschedule my appointment?</span>
               <span>+</span>
@@ -467,7 +313,7 @@
             </div>
           </div>
 
-          <div class="faq-item">
+          <div class="faq-item mobile-hide">
             <button class="faq-question">
               <span>Do you provide braiding hair?</span>
               <span>+</span>
@@ -483,23 +329,42 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="social">
       <div class="container contact-grid">
-        <div class="contact-card">
-          <span class="eyebrow">Contact</span>
-          <h2 class="section-title">Reach Twissups</h2>
+        <div class="contact-card social-card">
+          <span class="eyebrow">Social Media</span>
+          <h2 class="section-title">Follow Twissups</h2>
           <p>
-            Add Zedina’s final business contact details here once ready.
+            Keep up with fresh braid styles, updates, and availability posts.
           </p>
 
-          <ul class="contact-list">
-            <li><strong>Location:</strong> Guelph, Ontario</li>
-            <li><strong>Instagram:</strong> @twissups</li>
-          </ul>
+          <div class="social-links">
+            <a
+              class="social-link"
+              href="https://www.instagram.com/twissups/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>Instagram</strong>
+              <span>@twissups</span>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://www.tiktok.com/@twissups?_t=ZM-8vwOGZ1J5r4&amp;_r=1&amp;fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnZZLiDq1ltTwu3BvdLQJJ6X7Iq08w5E33vD5dpGq8vA-tE2Zmq-BSt-oRqN0_aem_WaYeqpNIDuhSQBPMAoM4Rg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>TikTok</strong>
+              <span>@twissups</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <a class="mobile-book-cta mobile-only" href="booking.html">Book Appointment</a>
 
   <footer>
     <div class="container footer-inner">
@@ -507,18 +372,6 @@
       <p>Built with HTML, CSS, and JavaScript.</p>
     </div>
   </footer>
-
-  <div class="modal" id="bookingModal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal" aria-label="Close booking modal">✕</button>
-      <span class="eyebrow">Quick booking</span>
-      <h3 style="font-size: 1.9rem; margin-bottom: 4px;">Ready to book?</h3>
-      <p>
-        Jump straight to the booking section and request your preferred date and service.
-      </p>
-      <a href="#booking" class="btn btn-primary btn-full" id="goToBooking">Go to booking form</a>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

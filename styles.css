@@ -80,6 +80,10 @@ a {
   font-size: 1rem;
 }
 
+.mobile-only {
+  display: none;
+}
+
 .btn {
   border: none;
   outline: none;
@@ -818,6 +822,130 @@ textarea {
   color: var(--muted);
 }
 
+.booking-page-main {
+  padding-top: 20px;
+}
+
+.booking-page-layout {
+  display: block;
+}
+
+.booking-page-layout .booking-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.booking-page-layout .booking-card form {
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 0;
+}
+
+.booking-page-header {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(140, 29, 79, 0.1);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.booking-page-header p {
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.booking-top-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.booking-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(140, 29, 79, 0.1);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.booking-step-title {
+  font-size: 1.04rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.booking-step-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+.booking-page-layout .form-success {
+  margin-top: 0;
+  box-shadow: var(--shadow);
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.time-slot-btn {
+  border: 1px solid rgba(140, 29, 79, 0.12);
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.time-slot-btn:hover {
+  background: var(--card-2);
+}
+
+.time-slot-btn.selected {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-color: transparent;
+  color: var(--white);
+}
+
+.time-slot-empty {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.93rem;
+  background: var(--card);
+  border: 1px solid rgba(140, 29, 79, 0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.booking-details {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.booking-details[hidden] {
+  display: none;
+}
+
 .booking-note {
   grid-column: 1 / -1;
   font-size: 0.92rem;
@@ -894,12 +1022,12 @@ textarea {
   transform: scale(1.08);
 }
 
-.g1 { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80'); }
-.g2 { background-image: url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80'); }
-.g3 { background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80'); }
-.g4 { background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80'); }
-.g5 { background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80'); }
-.g6 { background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'); }
+.g1 { background-image: url('imgs/img1.jpeg'); }
+.g2 { background-image: url('imgs/img2.jpeg'); }
+.g3 { background-image: url('imgs/img4.jpeg'); }
+.g4 { background-image: url('imgs/IMG_6585.jpeg'); }
+.g5 { background-image: url('imgs/img5.png'); }
+.g6 { background-image: url('imgs/img6.png'); }
 
 /* testimonials */
 .testimonials-grid {
@@ -1009,6 +1137,39 @@ textarea {
   margin-top: 12px;
 }
 
+.social-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(140, 29, 79, 0.1);
+  background: var(--card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link strong {
+  color: var(--primary-dark);
+}
+
+.social-link span {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 29, 79, 0.2);
+  box-shadow: 0 10px 24px rgba(92, 31, 64, 0.12);
+}
+
 .contact-list {
   list-style: none;
   display: grid;
@@ -1105,6 +1266,7 @@ footer {
   .hero-grid,
   .about-grid,
   .booking-wrap,
+  .booking-page-layout,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1118,6 +1280,10 @@ footer {
   }
 
   .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-top-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1168,11 +1334,19 @@ footer {
 
 @media (max-width: 560px) {
   .section {
-    padding: 68px 0;
+    padding: 56px 0;
   }
 
   .hero {
-    padding-top: 42px;
+    padding-top: 34px;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: inline-flex;
   }
 
   .services-grid,
@@ -1189,6 +1363,14 @@ footer {
     align-items: stretch;
   }
 
+  .hero-actions .btn-secondary {
+    display: none;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
   .booking-info,
   .booking-card,
   .about-card,
@@ -1198,12 +1380,22 @@ footer {
     padding: 22px;
   }
 
+  .booking-page-layout .booking-card {
+    padding: 0;
+  }
+
+  .booking-panel {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
   .hero-card {
     padding: 14px;
   }
 
-  .slot-picker {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .time-slot-grid,
+  .booking-details {
+    grid-template-columns: 1fr;
   }
 
   .calendar-weekdays,
@@ -1213,5 +1405,28 @@ footer {
 
   .hero-side-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-inner p:last-child {
+    display: none;
+  }
+
+  .home-page {
+    padding-bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+
+  .home-page .mobile-book-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 1500;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 14px 20px;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    box-shadow: 0 10px 28px rgba(95, 15, 50, 0.32);
   }
 }
