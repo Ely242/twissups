@@ -6,7 +6,7 @@
   <title>Book | Twissups</title>
   <meta
     name="description"
-    content="Book a Twissups appointment by selecting an available date, then choosing from open times set by Zedina."
+    content="Book a Twissups appointment directly through Square Appointments with booking policies and prep details included."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,7 +51,7 @@
             <span class="eyebrow">Booking</span>
             <h1 class="section-title">Book Your Appointment</h1>
             <p class="mobile-hide">
-              Select an available date, pick a time, then complete your booking details.
+              Choose your appointment directly through Square Appointments, then follow the booking policies below.
             </p>
           </div>
 
@@ -66,113 +66,35 @@
             </div>
           </section>
 
-          <form id="bookingForm" novalidate>
-            <div class="booking-top-grid">
-              <section class="booking-panel">
-                <div class="field full">
-                  <h3 class="booking-step-title">1. Select a Date</h3>
-                  <div class="booking-calendar" id="bookingCalendar" aria-label="Booking date calendar">
-                    <div class="calendar-nav">
-                      <button type="button" class="calendar-btn" id="calendarPrev" aria-label="Previous month">&#8249;</button>
-                      <strong id="calendarMonthLabel">Month Year</strong>
-                      <button type="button" class="calendar-btn" id="calendarNext" aria-label="Next month">&#8250;</button>
-                    </div>
-
-                    <div class="calendar-weekdays" aria-hidden="true">
-                      <span>Sun</span>
-                      <span>Mon</span>
-                      <span>Tue</span>
-                      <span>Wed</span>
-                      <span>Thu</span>
-                      <span>Fri</span>
-                      <span>Sat</span>
-                    </div>
-
-                    <div class="calendar-days" id="calendarDays"></div>
-                  </div>
-
-                  <input type="hidden" id="date" name="date" />
-                </div>
-              </section>
-
-              <section class="booking-panel">
-                <div class="field full">
-                  <h3 class="booking-step-title">2. Choose an Available Time</h3>
-                  <div class="time-slot-grid" id="timeSlotGrid"></div>
-                  <input type="hidden" id="time" name="time" />
-                </div>
-
-                <div class="field full">
-                  <p class="availability-status" id="availabilityStatus" data-tone="neutral">
-                    Select a date to load available times.
-                  </p>
-                </div>
-              </section>
+          <section class="booking-panel booking-calendly-panel" aria-label="Square booking">
+            <div class="booking-calendly-intro">
+              <h2 class="booking-step-title">Book with Square</h2>
+              <p>Select your service, date, and time using the scheduler below.</p>
             </div>
 
-            <section class="booking-details booking-panel" id="bookingDetails" hidden>
-              <div class="field full">
-                <h3 class="booking-step-title">3. Add Your Details</h3>
-              </div>
+            <iframe
+              class="booking-calendly-widget"
+              src="https://app.squareup.com/appointments/book/wfka4a240vr8dq/LWBCK2V0XN3RR/start"
+              title="Square booking scheduler"
+              loading="lazy"
+              aria-label="Square booking scheduler"
+            ></iframe>
 
-              <div class="field">
-                <label for="selectedDateDisplay">Selected date</label>
-                <input
-                  type="text"
-                  id="selectedDateDisplay"
-                  placeholder="Pick a date from the calendar"
-                  readonly
-                />
-              </div>
+            <div class="booking-note">
+              Booking note: a $20 non-refundable deposit is required, and clients should arrive with hair washed. Blow dry is included.
+            </div>
 
-              <div class="field">
-                <label for="selectedTimeDisplay">Selected time</label>
-                <input
-                  type="text"
-                  id="selectedTimeDisplay"
-                  placeholder="Pick a time"
-                  readonly
-                />
-              </div>
-
-              <div class="field">
-                <label for="name">Full name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required />
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
-              </div>
-
-              <div class="field full">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
-              </div>
-
-              <div class="field full">
-                <label for="notes">Hairstyle details and notes</label>
-                <textarea
-                  id="notes"
-                  name="notes"
-                  placeholder="Describe the hairstyle you want, length, braid size, preferred color, and any prep questions."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="booking-note">
-                Booking note: a $20 non-refundable deposit is required, and clients should arrive with hair washed. Blow dry is included.
-              </div>
-
-              <div class="field full">
-                <button type="submit" class="btn btn-primary btn-full">Submit Booking Request</button>
-              </div>
-            </section>
-          </form>
-
-          <div class="form-success" id="formSuccess">
-            Your booking request has been recorded in this demo.
-          </div>
+            <div class="booking-calendly-actions">
+              <a
+                class="btn btn-secondary"
+                href="https://app.squareup.com/appointments/book/wfka4a240vr8dq/LWBCK2V0XN3RR/start"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Square in a New Tab
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </section>

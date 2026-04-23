@@ -61,6 +61,17 @@ a {
   padding: 88px 0;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .eyebrow {
   display: inline-block;
   background: rgba(var(--accent-2-rgb), 0.24);
@@ -123,6 +134,14 @@ a {
   transform: translateY(-2px);
 }
 
+.btn:focus-visible,
+.menu-btn:focus-visible,
+.social-link:focus-visible,
+.faq-question:focus-visible {
+  outline: 3px solid rgba(var(--accent-2-rgb), 0.42);
+  outline-offset: 2px;
+}
+
 .btn-full {
   width: 100%;
   padding: 15px 20px;
@@ -152,6 +171,13 @@ a {
   gap: 12px;
   font-weight: 800;
   color: var(--primary);
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-mark {
@@ -186,6 +212,14 @@ a {
   font-weight: 500;
   color: var(--text);
   position: relative;
+}
+
+.nav-links a.active {
+  color: var(--primary-dark);
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a::after {
@@ -885,6 +919,31 @@ textarea {
   font-size: 0.95rem;
 }
 
+.booking-calendly-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.booking-calendly-intro p {
+  color: var(--muted);
+}
+
+.booking-calendly-widget {
+  display: block;
+  width: 100%;
+  min-width: 320px;
+  height: 760px;
+  border: 1px solid rgba(var(--primary-rgb), 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.booking-calendly-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .booking-top-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -1049,7 +1108,7 @@ textarea {
 
 .g1 { background-image: url('imgs/img1.jpeg'); }
 .g2 { background-image: url('imgs/img2.jpeg'); }
-.g3 { background-image: url('imgs/img4.jpeg'); }
+.g3 { background-image: url('imgs/img10.png'); }
 .g4 { background-image: url('imgs/IMG_6585.jpeg'); }
 .g5 { background-image: url('imgs/img5.png'); }
 .g6 { background-image: url('imgs/img6.png'); }
@@ -1286,6 +1345,19 @@ footer {
   margin-bottom: 20px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* responsive */
 @media (max-width: 1100px) {
   .hero-grid,
@@ -1314,6 +1386,11 @@ footer {
 
   .booking-policy-summary {
     grid-template-columns: 1fr;
+  }
+
+  .booking-calendly-widget {
+    min-width: 100%;
+    height: 700px;
   }
 }
 
@@ -1412,6 +1489,10 @@ footer {
   .booking-panel {
     padding: 18px;
     border-radius: 20px;
+  }
+
+  .booking-calendly-widget {
+    height: 640px;
   }
 
   .hero-card {
